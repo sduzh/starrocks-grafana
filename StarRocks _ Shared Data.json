@@ -1,4 +1,35 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_GRAFANA_STARROCKS_SHARE_DATA",
+      "label": "grafana-starrocks",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "10.2.0-60868"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -19,7 +50,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 9734,
   "graphTooltip": 0,
-  "id": 36,
+  "id": null,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -39,7 +70,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "grafanacloud-prom"
+        "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
       },
       "fieldConfig": {
         "defaults": {
@@ -51,6 +82,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisShow": false,
             "barAlignment": 0,
             "drawStyle": "line",
             "fillOpacity": 0,
@@ -60,6 +92,7 @@
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "smooth",
             "lineWidth": 1,
             "pointSize": 5,
@@ -137,7 +170,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_publish_tablet_version_latency{job=\"$cluster_name\"}",
@@ -149,7 +182,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_publish_tablet_version_latency_99{job=\"$cluster_name\"}",
@@ -162,7 +195,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_publish_tablet_version_qps{job=\"$cluster_name\"}",
@@ -179,7 +212,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "grafanacloud-prom"
+        "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
       },
       "fieldConfig": {
         "defaults": {
@@ -191,6 +224,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisShow": false,
             "barAlignment": 0,
             "drawStyle": "line",
             "fillOpacity": 0,
@@ -200,6 +234,7 @@
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "smooth",
             "lineWidth": 1,
             "pointSize": 5,
@@ -257,7 +292,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_publish_version_queued_tasks{job=\"$cluster_name\"}",
@@ -286,7 +321,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "grafanacloud-prom"
+        "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
       },
       "fieldConfig": {
         "defaults": {
@@ -298,6 +333,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisShow": false,
             "barAlignment": 0,
             "drawStyle": "line",
             "fillOpacity": 0,
@@ -307,6 +343,7 @@
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "smooth",
             "lineStyle": {
               "fill": "solid"
@@ -387,7 +424,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_get_tablet_metadata_latency{job=\"$cluster_name\"}",
@@ -399,7 +436,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_get_tablet_metadata_latency_99{job=\"$cluster_name\"}",
@@ -412,7 +449,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_get_tablet_metadata_qps{job=\"$cluster_name\"}",
@@ -429,7 +466,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "grafanacloud-prom"
+        "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
       },
       "description": "",
       "fieldConfig": {
@@ -442,6 +479,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisShow": false,
             "barAlignment": 0,
             "drawStyle": "line",
             "fillOpacity": 0,
@@ -451,6 +489,7 @@
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -528,7 +567,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_put_tablet_metadata_latency{job=\"$cluster_name\"}",
@@ -540,7 +579,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_put_tablet_metadata_latency_99{job=\"$cluster_name\"}",
@@ -553,7 +592,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_put_tablet_metadata_qps{job=\"$cluster_name\"}",
@@ -570,7 +609,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "grafanacloud-prom"
+        "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
       },
       "fieldConfig": {
         "defaults": {
@@ -582,6 +621,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisShow": false,
             "barAlignment": 0,
             "drawStyle": "line",
             "fillOpacity": 0,
@@ -591,6 +631,7 @@
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -668,7 +709,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "code",
           "expr": "lake_get_txn_log_latency{job=\"$cluster_name\"}",
@@ -680,7 +721,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_get_txn_log_latency_99{job=\"$cluster_name\"}",
@@ -693,7 +734,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_get_txn_log_qps{job=\"$cluster_name\"}",
@@ -710,7 +751,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "grafanacloud-prom"
+        "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
       },
       "fieldConfig": {
         "defaults": {
@@ -722,6 +763,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisShow": false,
             "barAlignment": 0,
             "drawStyle": "line",
             "fillOpacity": 0,
@@ -731,6 +773,7 @@
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -808,7 +851,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_put_txn_log_latency{job=\"$cluster_name\"}",
@@ -820,7 +863,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_put_txn_log_latency_99{job=\"$cluster_name\"}",
@@ -833,7 +876,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "editorMode": "builder",
           "expr": "lake_put_txn_log_qps{job=\"$cluster_name\"}",
@@ -860,7 +903,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "description": "",
           "fieldConfig": {
@@ -904,8 +947,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -940,7 +982,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "grafanacloud-prom"
+                "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
               },
               "editorMode": "code",
               "expr": "lake_metacache_usage{job=\"$cluster_name\"} / lake_metacache_capacity{job=\"$cluster_name\"} * 100",
@@ -957,7 +999,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1000,8 +1042,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1036,7 +1077,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "grafanacloud-prom"
+                "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
               },
               "editorMode": "builder",
               "expr": "lake_delvec_cache_miss_minute{job=\"$cluster_name\"}",
@@ -1051,7 +1092,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1094,8 +1135,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1131,7 +1171,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "grafanacloud-prom"
+                "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
               },
               "editorMode": "builder",
               "exemplar": false,
@@ -1149,7 +1189,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1192,8 +1232,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1227,7 +1266,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "grafanacloud-prom"
+                "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
               },
               "editorMode": "builder",
               "expr": "lake_txn_log_cache_miss_minute{job=\"$cluster_name\"}",
@@ -1242,7 +1281,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1285,8 +1324,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1320,7 +1358,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "grafanacloud-prom"
+                "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
               },
               "editorMode": "builder",
               "expr": "lake_segment_cache_miss_minute{job=\"$cluster_name\"}",
@@ -1337,7 +1375,7 @@
       "type": "row"
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1345,408 +1383,404 @@
         "y": 27
       },
       "id": 163,
-      "panels": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "grafanacloud-prom"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 0,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "auto",
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "µs"
-            },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byFrameRefID",
-                  "options": "C"
-                },
-                "properties": [
-                  {
-                    "id": "custom.axisPlacement",
-                    "value": "right"
-                  },
-                  {
-                    "id": "unit",
-                    "value": "reqps"
-                  }
-                ]
-              }
-            ]
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 4
-          },
-          "id": 161,
-          "options": {
-            "legend": {
-              "calcs": [
-                "mean",
-                "max"
-              ],
-              "displayMode": "table",
-              "placement": "right",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "single",
-              "sort": "none"
-            }
-          },
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "grafanacloud-prom"
-              },
-              "editorMode": "builder",
-              "expr": "lake_vacuum_del_file_latency{job=\"$cluster_name\"}",
-              "instant": false,
-              "legendFormat": "{{instance}} avg",
-              "range": true,
-              "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "grafanacloud-prom"
-              },
-              "editorMode": "builder",
-              "expr": "lake_vacuum_del_file_latency_99{job=\"$cluster_name\"}",
-              "hide": false,
-              "instant": false,
-              "legendFormat": "{{instance}} p99",
-              "range": true,
-              "refId": "B"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "grafanacloud-prom"
-              },
-              "editorMode": "builder",
-              "expr": "lake_vacuum_del_file_qps{job=\"$cluster_name\"}",
-              "hide": false,
-              "instant": false,
-              "legendFormat": "{{instance}} qps",
-              "range": true,
-              "refId": "C"
-            }
-          ],
-          "title": "Vacuum Deletes",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "grafanacloud-prom"
-          },
-          "description": "",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 0,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "auto",
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 4
-          },
-          "id": 162,
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "table",
-              "placement": "right",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "single",
-              "sort": "none"
-            }
-          },
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "grafanacloud-prom"
-              },
-              "editorMode": "builder",
-              "expr": "lake_vacuum_del_file_fails{job=\"$cluster_name\"}",
-              "instant": false,
-              "legendFormat": "{{instance}} fails",
-              "range": true,
-              "refId": "A"
-            }
-          ],
-          "title": "Errors",
-          "type": "timeseries"
-        }
-      ],
+      "panels": [],
       "title": "Vacuum",
       "type": "row"
     },
     {
-      "collapsed": true,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisShow": false,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "µs"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byFrameRefID",
+              "options": "C"
+            },
+            "properties": [
+              {
+                "id": "custom.axisPlacement",
+                "value": "right"
+              },
+              {
+                "id": "unit",
+                "value": "reqps"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 28
+      },
+      "id": 161,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
+          },
+          "editorMode": "builder",
+          "expr": "lake_vacuum_del_file_latency{job=\"$cluster_name\"}",
+          "instant": false,
+          "legendFormat": "{{instance}} avg",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
+          },
+          "editorMode": "builder",
+          "expr": "lake_vacuum_del_file_latency_99{job=\"$cluster_name\"}",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "{{instance}} p99",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
+          },
+          "editorMode": "builder",
+          "expr": "lake_vacuum_del_file_qps{job=\"$cluster_name\"}",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "{{instance}} qps",
+          "range": true,
+          "refId": "C"
+        }
+      ],
+      "title": "Vacuum Deletes",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisShow": false,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 28
+      },
+      "id": 162,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
+          },
+          "editorMode": "builder",
+          "expr": "lake_vacuum_del_file_fails{job=\"$cluster_name\"}",
+          "instant": false,
+          "legendFormat": "{{instance}} fails",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Errors",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 36
       },
       "id": 165,
-      "panels": [
+      "panels": [],
+      "title": "Loading",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 37
+      },
+      "id": 164,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 0,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "auto",
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green",
-                    "value": null
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "none"
-            },
-            "overrides": []
+          "editorMode": "builder",
+          "expr": "starrocks_be_async_delta_writer_queue_count{job=\"$cluster_name\"}",
+          "instant": false,
+          "legendFormat": "{{instance}} async_delta_writer_qsize",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 5
+          "editorMode": "builder",
+          "expr": "starrocks_be_memtable_flush_queue_count{job=\"$cluster_name\"}",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "{{instance}} memtable_flush_qsize",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
-          "id": 164,
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "table",
-              "placement": "right",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "single",
-              "sort": "none"
-            }
+          "editorMode": "builder",
+          "expr": "starrocks_be_segment_flush_queue_count{job=\"$cluster_name\"}",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "{{instance}} segment_flush_qsize",
+          "range": true,
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
           },
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "grafanacloud-prom"
-              },
-              "editorMode": "builder",
-              "expr": "starrocks_be_async_delta_writer_queue_count{job=\"$cluster_name\"}",
-              "instant": false,
-              "legendFormat": "{{instance}} async_delta_writer_qsize",
-              "range": true,
-              "refId": "A"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "grafanacloud-prom"
-              },
-              "editorMode": "builder",
-              "expr": "starrocks_be_memtable_flush_queue_count{job=\"$cluster_name\"}",
-              "hide": false,
-              "instant": false,
-              "legendFormat": "{{instance}} memtable_flush_qsize",
-              "range": true,
-              "refId": "B"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "grafanacloud-prom"
-              },
-              "editorMode": "builder",
-              "expr": "starrocks_be_segment_flush_queue_count{job=\"$cluster_name\"}",
-              "hide": false,
-              "instant": false,
-              "legendFormat": "{{instance}} segment_flush_qsize",
-              "range": true,
-              "refId": "C"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "grafanacloud-prom"
-              },
-              "editorMode": "builder",
-              "expr": "starrocks_be_update_apply_queue_count{job=\"$cluster_name\"}",
-              "hide": false,
-              "instant": false,
-              "legendFormat": "{{instance}} update_apply_qsize",
-              "range": true,
-              "refId": "D"
-            }
-          ],
-          "title": "Queue Size",
-          "type": "timeseries"
+          "editorMode": "builder",
+          "expr": "starrocks_be_update_apply_queue_count{job=\"$cluster_name\"}",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "{{instance}} update_apply_qsize",
+          "range": true,
+          "refId": "D"
         }
       ],
-      "title": "Loading",
-      "type": "row"
+      "title": "Queue Size",
+      "type": "timeseries"
     }
   ],
   "refresh": "",
   "schemaVersion": 38,
-  "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
-        "current": {
-          "selected": false,
-          "text": "StarRocks_AlexPC",
-          "value": "StarRocks_AlexPC"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
         },
         "definition": "",
         "hide": 0,
@@ -1768,14 +1802,10 @@
         "useTags": false
       },
       {
-        "current": {
-          "selected": false,
-          "text": "127.0.0.1:8030",
-          "value": "127.0.0.1:8030"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
         },
         "definition": "",
         "hide": 0,
@@ -1797,14 +1827,10 @@
         "useTags": false
       },
       {
-        "current": {
-          "selected": false,
-          "text": "127.0.0.1:8030",
-          "value": "127.0.0.1:8030"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
         },
         "definition": "",
         "hide": 0,
@@ -1826,14 +1852,10 @@
         "useTags": false
       },
       {
-        "current": {
-          "selected": false,
-          "text": "127.0.0.1:8040",
-          "value": "127.0.0.1:8040"
-        },
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
         },
         "definition": "",
         "hide": 0,
@@ -1895,7 +1917,7 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {
