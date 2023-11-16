@@ -138,7 +138,7 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom",
+          "placement": "right",
           "showLegend": true
         },
         "tooltip": {
@@ -166,7 +166,7 @@
           "useBackend": false
         }
       ],
-      "title": "AbortTxn Concurrency",
+      "title": "AbortTxn RPC Concurrency",
       "type": "timeseries"
     },
     {
@@ -240,7 +240,7 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom",
+          "placement": "right",
           "showLegend": true
         },
         "tooltip": {
@@ -266,7 +266,7 @@
           "useBackend": false
         }
       ],
-      "title": "AbortTxn QPS",
+      "title": "AbortTxn RPC QPS",
       "type": "timeseries"
     },
     {
@@ -421,7 +421,7 @@
           "refId": "C"
         }
       ],
-      "title": "Latency / QPS",
+      "title": "Publish Tablet Version Latency / QPS",
       "type": "timeseries"
     },
     {
@@ -517,7 +517,7 @@
           "refId": "A"
         }
       ],
-      "title": "Queued Tasks",
+      "title": "Queued Publish Tablet Tasks",
       "type": "timeseries"
     },
     {
@@ -2087,6 +2087,6 @@
   "timezone": "",
   "title": "StarRocks / Shared Data",
   "uid": "wpcA3txx7zx",
-  "version": 14,
+  "version": 15,
   "weekStart": ""
 }
