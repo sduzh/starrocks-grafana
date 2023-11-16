@@ -55,6 +55,7 @@
   "liveNow": false,
   "panels": [
     {
+      "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -62,6 +63,7 @@
         "y": 0
       },
       "id": 166,
+      "panels": [],
       "title": "Abort Transaction",
       "type": "row"
     },
@@ -120,7 +122,8 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "none"
         },
         "overrides": []
       },
@@ -151,11 +154,13 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "rpc_server_8060_starrocks_lake_lake_service_abort_txn_concurrency",
+          "expr": "rpc_server_${brpc_port}_starrocks_lake_lake_service_abort_txn_concurrency{job=\"$cluster_name\"}",
+          "format": "time_series",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,
-          "legendFormat": "__auto",
+          "interval": "",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -251,11 +256,11 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "rpc_server_8060_starrocks_lake_lake_service_abort_txn_qps",
+          "expr": "rpc_server_${brpc_port}_starrocks_lake_lake_service_abort_txn_qps{job=\"$cluster_name\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,
-          "legendFormat": "__auto",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A",
           "useBackend": false
@@ -2029,117 +2034,24 @@
         "useTags": false
       },
       {
-        "current": {},
-        "datasource": {
-          "type": "prometheus",
-          "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
-        },
-        "definition": "",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "fe_master",
-        "options": [],
-        "query": {
-          "query": "query_result(node_info{group=\"fe\", job=\"$cluster_name\", type=\"is_master\"})",
-          "refId": "Prometheus-fe_master-Variable-Query"
-        },
-        "refresh": 1,
-        "regex": "/instance=\"(.+:\\d+)\"/",
-        "skipUrlSync": false,
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "current": {},
-        "datasource": {
-          "type": "prometheus",
-          "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
-        },
-        "definition": "",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "fe_instance",
-        "options": [],
-        "query": {
-          "query": "up{group=\"fe\", job=\"$cluster_name\"}",
-          "refId": "Prometheus-fe_instance-Variable-Query"
-        },
-        "refresh": 1,
-        "regex": "/instance=\"(.+:\\d+)/",
-        "skipUrlSync": false,
-        "sort": 1,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "current": {},
-        "datasource": {
-          "type": "prometheus",
-          "uid": "${DS_GRAFANA_STARROCKS_SHARE_DATA}"
-        },
-        "definition": "",
-        "hide": 0,
-        "includeAll": false,
-        "multi": false,
-        "name": "be_instance",
-        "options": [],
-        "query": {
-          "query": "up{group=\"be\", job=\"$cluster_name\"}",
-          "refId": "Prometheus-be_instance-Variable-Query"
-        },
-        "refresh": 1,
-        "regex": "/instance=\"(.+:\\d+)/",
-        "skipUrlSync": false,
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "auto": false,
-        "auto_count": 30,
-        "auto_min": "10s",
         "current": {
           "selected": false,
-          "text": "1m",
-          "value": "1m"
+          "text": "8060",
+          "value": "8060"
         },
         "hide": 0,
-        "name": "interval",
+        "label": "brpc_port",
+        "name": "brpc_port",
         "options": [
           {
             "selected": true,
-            "text": "1m",
-            "value": "1m"
-          },
-          {
-            "selected": false,
-            "text": "2m",
-            "value": "2m"
-          },
-          {
-            "selected": false,
-            "text": "5m",
-            "value": "5m"
-          },
-          {
-            "selected": false,
-            "text": "10m",
-            "value": "10m"
+            "text": "8060",
+            "value": "8060"
           }
         ],
-        "query": "1m,2m,5m,10m",
-        "refresh": 2,
+        "query": "8060",
         "skipUrlSync": false,
-        "type": "interval"
+        "type": "textbox"
       }
     ]
   },
@@ -2175,6 +2087,6 @@
   "timezone": "",
   "title": "StarRocks / Shared Data",
   "uid": "wpcA3txx7zx",
-  "version": 11,
+  "version": 14,
   "weekStart": ""
 }
